@@ -11,22 +11,11 @@ struct CharactersView: View {
     
     @ObservedObject private var viewModel = CharactersViewModel.shared
     
-    private var columns : [GridItem] = [
-        .init(.flexible(), spacing: 0),
-        .init(.flexible(), spacing: 0),
-    ]
-    
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, content: {
-                ForEach(viewModel.items) {character in
-                    CharacterCell(character: character)
-                        .onAppear {
-                            viewModel.shouldLoad(character)
-                        }
-                }
-            })
-        }.onAppear {
+        CharactersGrid(characters: viewModel.items) { char in
+            viewModel.shouldLoad(char)
+        }
+            .onAppear {
             viewModel.fetchMany()
         }
     }

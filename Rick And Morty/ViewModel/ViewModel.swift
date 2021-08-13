@@ -7,17 +7,10 @@
 
 import Foundation
 
-protocol ViewModelProtocol {
-    
-    func fetchMany()
-    
-}
-
 class ViewModel<T:Equatable> : ObservableObject, ViewModelProtocol {
     
-    var nextUrl : String?
-    //var completion : (()->())!
     @Published var items : [T] = []
+    var nextUrl : String?
     
     func shouldLoad(_ item : T) {
         guard let last = items.last else {return}

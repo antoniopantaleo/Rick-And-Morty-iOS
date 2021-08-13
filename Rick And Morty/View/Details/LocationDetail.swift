@@ -13,13 +13,26 @@ struct LocationDetail: View {
     
     var body: some View {
         List {
-            Section (header:Text("Type")) {
+            Section (header:Text("Type").foregroundColor(Color(.label))) {
                 Text(location.type)
             }
-            Section (header:Text("Dimension")) {
+            Section (header:Text("Dimension").foregroundColor(Color(.label))) {
                 Text(location.dimension.capitalized)
             }
-        }.listStyle(InsetGroupedListStyle())
+            if !location.residents.isEmpty {
+            Section (header:Text("Residents").foregroundColor(Color(.label))) {
+                NavigationLink(
+                    destination: CharactersGrid(characters: location.residents)
+                        .navigationTitle("Residents"),
+                    label: {
+                        Text("See all")
+                    })
+                
+            }
+            }
+        }
+        .listStyle(InsetGroupedListStyle())
+        .frame(height:UIScreen.main.bounds.height)
         .navigationTitle(location.name)
     }
 }

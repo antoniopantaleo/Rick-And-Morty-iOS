@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var selectedPage = 0
     
     init() {
-        UIScrollView.appearance().backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
+        UIScrollView.appearance().backgroundColor = UIColor(named: "background")
     }
     
     var body: some View {
@@ -29,7 +29,8 @@ struct ContentView: View {
                 })
                 .navigationTitle(navigationTitle)
         }
-        .accentColor(.black)
+        .navigationViewStyle(StackNavigationViewStyle())
+        .accentColor(Color(.label))
     }
     
     private var navigationTitle : String {

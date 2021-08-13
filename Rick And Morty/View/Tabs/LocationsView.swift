@@ -12,16 +12,31 @@ struct LocationsView: View {
     @ObservedObject private var viewModel = LocationsViewModel.shared
     
     var body: some View {
-        List(viewModel.items) { location in
-            NavigationLink(
-                destination: LocationDetail(location: location),
-                label: {
-                    Text(location.name)
-                })
-                .onAppear {
-                    viewModel.shouldLoad(location)
+        Group {
+            if viewModel.items.isEmpty {
+                List {
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                        Spacer()
+                    }
                 }
-        }.listStyle(InsetGroupedListStyle())
+            } else {
+                List(viewModel.items) { location in
+                    NavigationLink(
+                        destination: LocationDetail(location: location),
+                        label: {
+                            Text(location.name)
+                        })
+                        .onAppear {
+                            viewModel.shouldLoad(location)
+                        }
+                }
+                
+            }
+        }
+        .listStyle(InsetGroupedListStyle())
         .onAppear {
             viewModel.fetchMany()
         }

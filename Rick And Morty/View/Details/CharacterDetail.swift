@@ -21,25 +21,25 @@ struct CharacterDetail: View {
                 .clipShape(Circle())
                 .redacted(reason: image == UIImage() ? .placeholder : [])
                 .padding(.top)
-                .listRowBackground(Color(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)))
+                .listRowBackground(Color("background"))
             }
                 
-            Section(header: Text("Status")) {
+            Section(header: Text("Status").foregroundColor(Color(.label))) {
                 VStack(alignment:.leading, spacing:20) {
                     Text(character.status.prettyString)
                 }
             }
-            Section (header: Text("Species")) {
+            Section (header: Text("Species").foregroundColor(Color(.label))) {
                 HStack {
-                    Text(character.species)
+                    Text(character.species.capitalized)
                     if !character.type.isEmpty {
-                        Text("(\(character.type))")
+                        Text("(\(character.type.capitalized))")
                     }
                 }
             }
             
-            Section (header: Text("Gender")) {
-                    Text(character.gender.prettyString)
+            Section (header: Text("Gender").foregroundColor(Color(.label))) {
+                Text(character.gender.prettyString)
                 }
             
             

@@ -10,3 +10,7 @@ import Foundation
 protocol Prettifiable {
     var prettyString : String { get }
 }
+
+protocol ViewModelProtocol {
+    func fetchMany()
+}

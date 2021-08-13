@@ -11,7 +11,7 @@ struct CharacterCell: View {
     
     @State private var image : UIImage = UIImage()
     let character : Character
-    private let size = UIScreen.main.bounds.width / 2.2
+    private let size : CGFloat = UIScreen.main.bounds.width / 2.2
     
     var body: some View {
         NavigationLink(
@@ -31,7 +31,7 @@ struct CharacterCell: View {
                         .lineLimit(1)
                         .truncationMode(.tail)
                         .padding(.trailing,15)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color(.label))
                     
                 }
             })
