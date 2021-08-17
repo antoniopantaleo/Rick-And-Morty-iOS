@@ -15,6 +15,13 @@ This project makes use of the [Rick & Morty API](https://rickandmortyapi.com) to
 
 ## Features
 
+- [Pagination](#pagination)
+- [Asynchronous Image Load](#asynchronous-image-load)
+- [Dark Mode](#dark-mode)
+- [Memory Safety](#memory-safety)
+- [GraphQL](#graphql)
+- [Generic Types](#extensive-use-of-generics)
+
 ### Pagination 
 
 New data are fetched only when needed, in order to limit network requests.
@@ -60,7 +67,7 @@ For a non-blocking app experience, images are loaded asynchronously and displaye
 </div>
 
 
-### Memory safety
+### Memory Safety
 
 No longer visible images are freed up in order to save memory. Its usage remains almost constant.
 
