@@ -7,7 +7,10 @@
 
 import Foundation
 
+/// Used to provide a prettified version ...
 protocol Prettifiable {
+    
+    /// Prettified string
     var prettyString : String { get }
 }
 

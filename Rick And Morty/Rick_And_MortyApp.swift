@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct Rick_And_MortyApp: App {
+    
+    init() {
+        UIScrollView.appearance().backgroundColor = UIColor(named: "background")
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -9,12 +9,10 @@ import Foundation
 
 class CharactersViewModel : ViewModel<Character> {
     
-    override init() {
-        super.init()
-    }
+    override init() { super.init() }
     
     override func fetchMany() {
-        ApolloManager.fetchAll(query: AllCharactersQuery(page: next)) { [self] (response: APIResponse<Character>) in
+        ApolloManager.perform(query: AllCharactersQuery(page: next)) { [self] (response: APIResponse<Character>) in
             next = response.info.next
             DispatchQueue.main.async {
                 items.append(contentsOf: response.results)

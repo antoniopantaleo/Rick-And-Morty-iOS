@@ -10,12 +10,10 @@ import Apollo
 
 class LocationsViewModel : ViewModel<Location> {
     
-    override init() {
-        super.init()
-    }
+    override init() { super.init() }
     
     override func fetchMany() {
-        ApolloManager.fetchAll(query: AllLocationsQuery(page: next)) { [self] (response : APIResponse<Location>) in
+        ApolloManager.perform(query: AllLocationsQuery(page: next)) { [self] (response : APIResponse<Location>) in
             next = response.info.next
             DispatchQueue.main.async {
                 items.append(contentsOf: response.results)

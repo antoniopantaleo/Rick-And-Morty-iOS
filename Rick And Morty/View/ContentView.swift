@@ -11,10 +11,6 @@ struct ContentView: View {
     
     @State private var selectedPage = 0
     
-    init() {
-        UIScrollView.appearance().backgroundColor = UIColor(named: "background")
-    }
-    
     var body: some View {
         NavigationView {
             TabView(selection: $selectedPage,
