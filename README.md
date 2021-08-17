@@ -1,7 +1,8 @@
 # Rick & Morty iOS
 
-<img src="assets/rm.svg" width="300"/>
-
+<div align="center">
+	<img src="assets/rm.svg" width="300"/>
+</div>
 
 
 ![Xcode Version](https://img.shields.io/badge/XCode-12.5-blue?logo=xcode&labelColor=3E81BC&color=brightgreen&logoColor=white&style=flat-square) ![Swift Version](https://img.shields.io/badge/Swift-5.4-blue?logo=swift&labelColor=orange&color=brightgreen&logoColor=white&style=flat-square) ![iOS Version](https://img.shields.io/badge/-14.5-blue?logo=ios&labelColor=lightgray&color=brightgreen&logoColor=white&style=flat-square)
@@ -14,31 +15,58 @@ This project makes use of the [Rick & Morty API](https://rickandmortyapi.com) to
 
 ## Features
 
-#### Pagination 
+### Pagination 
 
-New data are requested only when needed, in order to limit network requests.
+New data are fetched only when needed, in order to limit network requests.
 
-<img src="assets/characters-2.gif" width="49%"/> <img src="assets/locations.gif" width="49%"/>
+<div align="center"
+     <span>
+		<img src="assets/characters-2.gif" width="32%"/>
+		<a> &nbsp; </a>
+		<a> &nbsp; </a>
+		<a> &nbsp; </a>
+		<a> &nbsp; </a>
+		<img src="assets/locations.gif" width="32%"/>
+	</span>
+</div>
 
-#### Asynchronous Image Load
+### Asynchronous Image Load
 
 For a non-blocking app experience, images are loaded asynchronously and displayed only when they're ready.
 
-<img src="assets/async-characters.png" width="49%"/> <img src="assets/async-rick.png" width="49%"/>
+<div align="center"
+     <span>
+		<img src="assets/async-characters.png" width="32%"/>
+		<a> &nbsp; </a>
+		<a> &nbsp; </a>
+		<a> &nbsp; </a>
+		<a> &nbsp; </a>
+		 <img src="assets/async-rick.png" width="32%"/>
+	</span>
+</div>
 
 
+### Dark Mode
 
-#### Dark Mode
+<div align="center"
+     <span>
+		<img src="assets/characters-dark.png" width="32%"/>
+		<a> &nbsp; </a>
+		<a> &nbsp; </a>
+		<a> &nbsp; </a>
+		<a> &nbsp; </a>
+		<img src="assets/locations-dark.png" width="32%"/>
+	</span>
+</div>
 
-<img src="assets/characters-dark.png" width="49%"/> <img src="assets/locations-dark.png" width="49%"/>
 
-#### Memory safety
+### Memory safety
 
 No longer visible images are freed up in order to save memory. Its usage remains almost constant.
 
 <img src="assets/memory.gif" width="60%" /> <img src="assets/memory-scroll-2.gif" width="30%" />
 
-#### GraphQL
+### GraphQL
 
 The app uses the [GraphQL](https://graphql.org) technology in order to offer a lightwheight and powerful way to fetch the APIs. 
 
@@ -69,7 +97,7 @@ query AllLocations($page : Int) {
 }
 ```
 
-#### Extensive Use of Generics
+### Extensive Use of Generics
 
 The app makes a strong usage of generic types.
 
@@ -123,8 +151,6 @@ ApolloManager.perform(query: MyGraphQLQueryTwo(param: param)) { (response : APIR
 - [ ] **Search Bar** to search characters and filter them by attributes 
 - [ ] Include informations about **Episodes**
 - [ ] **Tests**
-
-<br/>
 
 ---
 
