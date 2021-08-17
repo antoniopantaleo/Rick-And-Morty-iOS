@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LocationsView: View {
     
-    @ObservedObject private var viewModel = LocationsViewModel.shared
+    @StateObject private var viewModel = LocationsViewModel()
     
     var body: some View {
         Group {

@@ -12,7 +12,7 @@ struct CharactersGrid: View {
     let characters : [Character]
     let onItemAppeared : ((Character)->())?
 
-    private var columns : [GridItem] = [
+    private let columns : [GridItem] = [
         .init(.flexible(),spacing:10),
         .init(.flexible(),spacing:10)
     ]

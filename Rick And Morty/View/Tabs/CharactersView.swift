@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharactersView: View {
     
-    @ObservedObject private var viewModel = CharactersViewModel.shared
+    @StateObject private var viewModel = CharactersViewModel()
     
     var body: some View {
         CharactersGrid(characters: viewModel.items) { char in

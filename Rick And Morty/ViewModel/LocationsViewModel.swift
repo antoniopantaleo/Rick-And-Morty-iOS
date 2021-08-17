@@ -9,9 +9,7 @@ import Foundation
 
 class LocationsViewModel : ViewModel<Location> {
     
-    static let shared = LocationsViewModel()
-    
-    private override init() {
+    override init() {
         super.init()
     }
     

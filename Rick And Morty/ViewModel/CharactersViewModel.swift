@@ -9,9 +9,7 @@ import Foundation
 
 class CharactersViewModel : ViewModel<Character> {
     
-    static let shared = CharactersViewModel()
-    
-     private override init() {
+    override init() {
         super.init()
     }
     

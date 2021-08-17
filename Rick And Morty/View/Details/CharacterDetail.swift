@@ -11,16 +11,19 @@ struct CharacterDetail: View {
     
     let character : Character
     @State private var image : UIImage = UIImage()
+    private let size = UIScreen.main.bounds.height * 0.3
     
     var body: some View {
         List {
             Section {
                 
-            Image(uiImage: image)
-                .resizable()
-                .clipShape(Circle())
-                .redacted(reason: image == UIImage() ? .placeholder : [])
-                .padding(.top)
+                HStack {
+                    Spacer()
+                    AsyncImage(url: character.image)
+                        .frame(width: size, height: size)
+                        .clipShape(Circle())
+                    Spacer()
+                }
                 .listRowBackground(Color("background"))
             }
                 
@@ -46,15 +49,6 @@ struct CharacterDetail: View {
             
         }
         .listStyle(InsetGroupedListStyle())
-        .onAppear {
-            URLSession.shared.dataTask(with: URL(string: character.image)!) { data, _, error in
-                guard let data = data, error == nil else {return}
-                guard let newImage = UIImage(data: data) else {return}
-                DispatchQueue.main.async { [self] in
-                    image = newImage
-                }
-            }.resume()
-        }
         .navigationTitle(character.name)
     }
 }
