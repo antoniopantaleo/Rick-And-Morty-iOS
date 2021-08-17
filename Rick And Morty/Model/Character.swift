@@ -48,7 +48,7 @@ class Character : Decodable, Identifiable {
         
     }
     
-    let id : Int
+    let id : String
     let name : String
     let status : Status
     let species : String

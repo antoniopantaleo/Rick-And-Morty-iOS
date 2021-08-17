@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Apollo
 
 class LocationsViewModel : ViewModel<Location> {
     
@@ -14,15 +15,10 @@ class LocationsViewModel : ViewModel<Location> {
     }
     
     override func fetchMany() {
-        let url = nextUrl == nil ? "\(APIManager.baseUrl)/location" : nextUrl!
-        APIManager.fetchMany(url: url) { [self] (result : Result<APIResponse<Location>,Error>) in
-            if case let .success(response) = result {
-                nextUrl = response.info.next
-                DispatchQueue.main.async {
-                    items.append(contentsOf: response.results)
-                }
-            } else {
-                print("ERROR")
+        ApolloManager.fetchAll(query: AllLocationsQuery(page: next)) { [self] (response : APIResponse<Location>) in
+            next = response.info.next
+            DispatchQueue.main.async {
+                items.append(contentsOf: response.results)
             }
         }
     }
