@@ -18,7 +18,7 @@ This project makes use of the [Rick & Morty API](https://rickandmortyapi.com) to
 
 New data are requested only when needed, in order to limit network requests.
 
-<img src="assets/characters.gif" width="49%"/> <img src="assets/locations.gif" width="49%"/>
+<img src="assets/characters-2.gif" width="49%"/> <img src="assets/locations.gif" width="49%"/>
 
 #### Asynchronous Image Load
 
@@ -36,7 +36,7 @@ For a non-blocking app experience, images are loaded asynchronously and displaye
 
 No longer visible images are freed up in order to save memory. Its usage remains almost constant.
 
-<img src="assets/memory.gif" width="60%" /> <img src="assets/memory-scroll.gif" width="30%" />
+<img src="assets/memory.gif" width="60%" /> <img src="assets/memory-scroll-2.gif" width="30%" />
 
 #### GraphQL
 
