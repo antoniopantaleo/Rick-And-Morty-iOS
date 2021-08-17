@@ -4,7 +4,7 @@
 
 
 
-![Xcode Version](https://img.shields.io/badge/XCode-12.5-blue?logo=xcode&labelColor=3E81BC&color=brightgreen&logoColor=white) ![Swift Version](https://img.shields.io/badge/Swift-5.4-blue?logo=swift&labelColor=orange&color=brightgreen&logoColor=white) ![iOS Version](https://img.shields.io/badge/-14.5-blue?logo=ios&labelColor=lightgray&color=brightgreen&logoColor=white)
+![Xcode Version](https://img.shields.io/badge/XCode-12.5-blue?logo=xcode&labelColor=3E81BC&color=brightgreen&logoColor=white&style=flat-square) ![Swift Version](https://img.shields.io/badge/Swift-5.4-blue?logo=swift&labelColor=orange&color=brightgreen&logoColor=white&style=flat-square) ![iOS Version](https://img.shields.io/badge/-14.5-blue?logo=ios&labelColor=lightgray&color=brightgreen&logoColor=white&style=flat-square)
 
 ## Overview
 
