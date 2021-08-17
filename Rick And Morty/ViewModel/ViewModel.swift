@@ -10,11 +10,11 @@ import Foundation
 class ViewModel<T:Equatable> : ObservableObject, ViewModelProtocol {
     
     @Published var items : [T] = []
-    var nextUrl : String?
+    var next : Int?
     
     func shouldLoad(_ item : T) {
         guard let last = items.last else {return}
-        if item == last, nextUrl != nil {
+        if item == last, next != nil {
             fetchMany()
         }
     }

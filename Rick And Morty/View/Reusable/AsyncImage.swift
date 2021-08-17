@@ -18,7 +18,8 @@ struct AsyncImage: View {
         .scaledToFit()
         .redacted(reason: image == UIImage() ? .placeholder : [])
             .onAppear {
-                URLSession.shared.dataTask(with: URL(string: url)!) { data, _, error in
+                guard let url = URL(string: url) else {return}
+                URLSession.shared.dataTask(with: url) { data, _, error in
                     guard let data = data, error == nil else {return}
                     guard let newImage = UIImage(data: data) else {return}
                     DispatchQueue.main.async { [self] in

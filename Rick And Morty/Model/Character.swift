@@ -36,19 +36,19 @@ class Character : Decodable, Identifiable {
         var prettyString: String {
             switch self {
             case .male:
-                return "Male"
+                return "♂︎ Male"
             case .female:
-                return "Female"
+                return "♀︎ Female"
             case .genderless:
-                return "Genderless"
+                return "⚬ Genderless"
             case .unknown:
-                return "Unkown"
+                return "❓ Unkown"
             }
         }
         
     }
     
-    let id : Int
+    let id : String
     let name : String
     let status : Status
     let species : String

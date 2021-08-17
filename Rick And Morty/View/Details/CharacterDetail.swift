@@ -32,6 +32,11 @@ struct CharacterDetail: View {
                     Text(character.status.prettyString)
                 }
             }
+            
+            Section (header: Text("Gender").foregroundColor(Color(.label))) {
+                Text(character.gender.prettyString)
+            }
+            
             Section (header: Text("Species").foregroundColor(Color(.label))) {
                 HStack {
                     Text(character.species.capitalized)
@@ -41,9 +46,6 @@ struct CharacterDetail: View {
                 }
             }
             
-            Section (header: Text("Gender").foregroundColor(Color(.label))) {
-                Text(character.gender.prettyString)
-                }
             
             
             
